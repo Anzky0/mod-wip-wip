@@ -25,6 +25,17 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			'bool'); //Variable type
 		addOption(option);
 
+		var option:Option = new Option('Jumbotron Update Time', //Name
+			'The time it takes to update the Jumbotron display.\nLower values may weaken performance.', //Description
+			'jumboUpdate', //Save data variable name
+			'float'); //Variable type
+		addOption(option);
+		option.decimals = 2;
+		option.displayFormat = "%v sec";
+		option.changeValue = 0.05;
+		option.minValue = 0;
+		option.maxValue = 1;
+
 		var option:Option = new Option('Anti-Aliasing',
 			'If unchecked, disables anti-aliasing, increases performance\nat the cost of sharper visuals.',
 			'antialiasing',
