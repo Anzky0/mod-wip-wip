@@ -1,5 +1,6 @@
 package states.stages;
 
+import states.stages.objects.JumbotronDisplay;
 import states.stages.objects.ZoomSprite;
 
 class MagicShow extends BaseStage {
@@ -9,6 +10,14 @@ class MagicShow extends BaseStage {
         var bg:BGSprite = new BGSprite('venue_bg', -1530, -390, 1, 1);
 		add(bg);
 
+        var jumbotron:JumbotronDisplay = new JumbotronDisplay(-715, -65, FlxG.camera);
+        add(jumbotron);
+
+        var jumbotron:JumbotronDisplay = new JumbotronDisplay(1370, -65, FlxG.camera);
+        add(jumbotron);
+    }
+
+    override function createPost() {
         var seats:ZoomSprite = new ZoomSprite(-1530, -490, 0.975, 'venue_seats');
         seats.scrollFactor.set(1.25, 1.25);
         seats.zoomMin = 0.5;
