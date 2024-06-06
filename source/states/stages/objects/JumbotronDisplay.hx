@@ -19,13 +19,8 @@ class JumbotronDisplay extends FlxSprite {
 		if (updateTmr < ClientPrefs.data.jumboUpdate || ClientPrefs.data.lowQuality) return;
 		updateTmr = 0;
 
-		/**
-		 * did a little yoinking from catfight.
-		 * sorry balls burger. :(
-		 */
-		camTransform.setTo(1, 0, 0, 1, 0, 0);
-		//camTransform.translate(-(0.5 * cameraToDraw.width * (cameraToDraw.scaleX - cameraToDraw.initialZoom) / cameraToDraw.scaleX), -(0.5 * cameraToDraw.height * (cameraToDraw.scaleY - cameraToDraw.initialZoom) / cameraToDraw.scaleY));
-		camTransform.scale(1 / cameraToDraw.zoom * 0.25, 1 / cameraToDraw.zoom * 0.25);
+		camTransform.setTo(1, 0, 0, 1, camera.width * -0.25, camera.height * -0.25);
+		camTransform.scale(0.75, 0.75);
 		pixels.draw(cameraToDraw.canvas, camTransform);
 	}
 
