@@ -35,6 +35,14 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		option.changeValue = 0.05;
 		option.minValue = 0;
 		option.maxValue = 1;
+		var option:Option = new Option('Jumbotron Ratio', //Name
+			'The ratio between the camera resolution and the Jumbotron resolution.', //Description
+			'jumboRatio', //Save data variable name
+			'int'); //Variable type
+		addOption(option);
+		option.displayFormat = "1:%v";
+		option.minValue = 1;
+		option.maxValue = 6;
 
 		var option:Option = new Option('Anti-Aliasing',
 			'If unchecked, disables anti-aliasing, increases performance\nat the cost of sharper visuals.',
